@@ -1,0 +1,15 @@
+<h1> <%= link_to @genre_name, root_path %> </h1>
+
+<div id="games">
+<% @games.each do |game| %>
+  <% if game.thumbnail.attached? %>
+    <h1><%= link_to game.title, game %></h1>
+    <%= link_to image_tag(game.resized_thumbnail), game %>
+  <% else %>
+  <div style="width: 240px; heigth: 135px">
+    <%= link_to game.title, game %>
+  </div>
+  <% end %>
+<% end %>
+</div>
+
