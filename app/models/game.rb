@@ -3,6 +3,6 @@ class Game < ApplicationRecord
   has_one_attached :thumbnail
 
   def resized_thumbnail
-    thumbnail.variant(resize: "240x135!")
+    thumbnail
   end
 end
