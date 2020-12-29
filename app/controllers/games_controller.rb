@@ -25,6 +25,7 @@ class GamesController < ApplicationController
   # GET /games/1/edit
   def edit 
     @game = Game.find(params[:id])
+    
   end
 
   # POST /games
@@ -79,7 +80,7 @@ class GamesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def game_params
-      params.require(:game).permit(:title, :review, :rating, :thumbnail, genre_ids: [])
+      params.require(1).permit(:title, :review, :rating, :thumbnail, genre_ids: [])
     end
 
     def set_games_and_genre_with_criteria(requested_genre, requested_order)
